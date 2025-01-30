@@ -1,0 +1,24 @@
+<section class="bg-dark p-4">
+    <h1 class="text-white text-center p-4">THE MOVEI</h1>
+    <div class="container">
+        <div class="row g-4">
+            @for (mov of movies; track mov.id) {
+            <div class="col-md-4">
+                <div class="card h-100">
+                    @if (mov.backdrop_path) {
+                    <img class="card-img-top" [src]="imgPath+mov.backdrop_path" alt="Title" />
+                    }
+                    @else {
+                    <img class="card-img-top" [src]="imgPath+mov.profile_path" alt="Title" />
+                    }
+                    <div class="card-body">
+                        <h4 class="card-title">Title:{{mov.title}} {{mov.name}}</h4>
+                        <p class="card-text">Text:{{mov.overview}} {{mov.media_type}}</p>
+                    </div>
+                </div>
+
+            </div>
+            }
+        </div>
+    </div>
+</section>
